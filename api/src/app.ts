@@ -6,6 +6,7 @@ import { config } from './utils/config'
 import connect from './utils/connect'
 import log from './utils/logger'
 import path from 'path'
+import { requestLimit } from './middleware/rateLimit'
 
 const app = express()
 
@@ -27,6 +28,7 @@ app.use(express.json())
 app.use('/images', express.static(path.join(__dirname, '/images')))
 
 app.use(deserializedUser)
+app.use(requestLimit)
 
 app.listen(port, async () => {
   log.info(`App is running at http://localhost:${port}`)
