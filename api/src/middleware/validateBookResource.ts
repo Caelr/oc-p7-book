@@ -1,14 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 import { AnyZodObject } from 'zod'
 
-type BookData = {
-  userId: string
-  title: string
-  author: string
-  genre: string
-  year: number
-  imageUrl: string
-}
 
 const validateBook = (schema: AnyZodObject) => (req: Request, res: Response, next: NextFunction) => {
   try {

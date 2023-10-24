@@ -92,7 +92,7 @@ export const findAndUpdateBookHandler = async (
     } else {
       const filename = book?.imageUrl.split('/images/')[1]
       const filePath = `src/images/${filename}`
-      if (fs.existsSync(filePath)) {
+      if (req.file && fs.existsSync(filePath)) {
         fs.unlink(filePath, (err) => {
           if (err) {
             throw err
