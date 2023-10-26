@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import uniqueValidator from 'mongoose-unique-validator'
 import { UserDocument } from './user.model'
 
 export interface Rating {
@@ -34,6 +35,8 @@ const bookSchema = new mongoose.Schema({
   ],
   averageRating: { type: Number, require: true }
 })
+
+bookSchema.plugin(uniqueValidator)
 
 const Book = mongoose.model<BookDocument>('Book', bookSchema)
 export default Book
