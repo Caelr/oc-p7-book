@@ -13,7 +13,7 @@
 
 # misc
 .DS_Store
-# Todo uncomment .env and remove it from the repo / This is just for demonstration purposes 
+# Todo uncomment .env and remove it from the repo / This is just for demonstration purposes
 # .env
 .env.local
 .env.development.local
@@ -23,3 +23,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/diagrams
