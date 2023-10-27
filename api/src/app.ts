@@ -10,7 +10,7 @@ import { requestLimit } from './middleware/rateLimit'
 
 const app = express()
 
-const port = config.PORT
+const port = process.env.PORT || config.PORT
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')

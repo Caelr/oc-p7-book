@@ -10,7 +10,7 @@ export const findBook = async (query: FilterQuery<BookInput>, options: QueryOpti
 }
 
 export const findBestBooks = async () => {
-  return Book.find().sort({ averageRating: -1 }).limit(3).exec()
+  return Book.find().sort({ averageRating: -1 }).limit(3)
 }
 
 export const createBook = (input: BookInput) => {
