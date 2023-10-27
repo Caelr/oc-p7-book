@@ -26,3 +26,6 @@ yarn-error.log*
 
 /diagrams
 *.zip
+*.txt
+.DS_Store
+
