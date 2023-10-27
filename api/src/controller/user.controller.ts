@@ -14,6 +14,6 @@ export const createUserHandler = async (
     return res.status(201).json({ message: 'User created successfully' })
   } catch (error: any) {
     log.error(error)
-    return res.status(409).send(error.message)
+    return res.status(409).json({message: `Can't create user`})
   }
 }
