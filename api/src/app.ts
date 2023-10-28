@@ -1,12 +1,12 @@
 import express from 'express'
 import helmet from 'helmet'
+import path from 'path'
 import { deserializedUser } from './middleware/deserializedUser'
+import { requestLimit } from './middleware/rateLimit'
 import routes from './routes'
 import { config } from './utils/config'
 import connect from './utils/connect'
 import log from './utils/logger'
-import path from 'path'
-import { requestLimit } from './middleware/rateLimit'
 
 const app = express()
 
@@ -21,7 +21,6 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
   next()
 })
-
 
 app.use(express.json())
 

@@ -16,12 +16,12 @@ import {
 } from './controller/book.controller'
 import uploadMiddleware from './middleware/multer'
 import { requireUser } from './middleware/requireUser'
+import sharpMiddleware from './middleware/sharp'
 import validateBook from './middleware/validateBookResource'
+import validateReview from './middleware/validateReview'
 import { createBookSchema, deleteBookSchema, rateBookSchema, updateBookSchema } from './schema/book.schema'
 import { createSessionSchema } from './schema/session.schema'
 import { createUserSchema } from './schema/user.schema'
-import validateReview from './middleware/validateReview'
-import sharpMiddleware from './middleware/sharp'
 
 const routes = (app: Express) => {
   app.get('/health', (req: Request, res: Response, next: NextFunction) => res.sendStatus(200))
