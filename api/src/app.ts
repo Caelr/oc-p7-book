@@ -1,5 +1,5 @@
 import express from 'express'
-
+import helmet from 'helmet'
 import { deserializedUser } from './middleware/deserializedUser'
 import routes from './routes'
 import { config } from './utils/config'
@@ -27,6 +27,7 @@ app.use(express.json())
 
 app.use('/images', express.static(path.join(__dirname, '/images')))
 
+app.use(helmet())
 app.use(deserializedUser)
 app.use(requestLimit)
 

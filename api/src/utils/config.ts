@@ -12,7 +12,7 @@ const schema = Type.Object({
   PUBLIC_KEY: Type.String(),
   PRIVATE_KEY: Type.String(),
   ACCESS_TOKEN_TIME_TO_LIVE: Type.String({
-    default: '24h'
+    default: '4h'
   }),
 })
 
@@ -22,4 +22,3 @@ export const config = envSchema<Env>({
   schema,
   dotenv: true
 })
-
